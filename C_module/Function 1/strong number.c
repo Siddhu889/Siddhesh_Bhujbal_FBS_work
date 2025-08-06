@@ -1,36 +1,38 @@
-//with parameter and without return type
-//Check the given number is Strong number or not
-//Input n :145;
-//Output : Strong
+//with parameter and without return type.
+// Print strong numbers in the given range 1 to n.
 #include<stdio.h>
-void strong(int num);
+void strong(int start,int end);
 void main()
 {
-	int num;
-	printf("Enter the number\n");
-	scanf("%d",&num);
-	strong(num);
+	int start,end;
+	printf("Enter the first number:\n");
+	scanf("%d",&start);
+	printf("Enter the last number:\n");
+	scanf("%d",&end);
+	strong(start,end);
 }
-void strong(int num)
+void strong(int start,int end)
 {
-	int sum,number,fact,temp = 0;
-	temp = num;
-	while(temp > 0){
-		number = temp % 10;
-		fact =1;
-		for(int i=1; i<=number; i++){
-		fact = fact*i;
-	}
-	sum = sum+fact;
-	temp= temp/10;
+	int temp,digit,fact,sum,i,count;
+	for(int i = start; i <= end; i++)
+	{
+	temp = i;
+	sum = 0;
 	
+		while(temp > 0)
+	{
+		digit = temp % 10;
+		fact = 1;
+	for(int j = 1; j <= digit; j++)
+	{	
+		fact = fact * j;
+		}
+	sum = sum + fact;
+	temp = temp / 10;
 }
-if(sum == num)
-{
-	printf("The number is strong number");
-}
-else{
-	printf("The number is not strong number");
-
-}
+		if(sum == i)
+		{
+			printf("The strong numbers are::%d\n",i);
+		}
+	}
 }

@@ -1,36 +1,38 @@
-//with parameter and without return type
-//Check the given number is Perfect number or not.
-//Input: n = 28
-//Output: Perfect
+//with parameter and without return type.
+// Print perfect numbers in the given range 1 to n.
 #include<stdio.h>
-void perfect(int num);
-void main()
+void perfect(int start, int end);
+int main()
 {
-	int num;
-	printf("Enter the number:\n");
-	scanf("%d",&num);
-	perfect(num);
+    int start,end;
+	printf("Enter the first number ::\n");
+	scanf("%d",&start);
+	printf("Enter the last number ::\n");
+	scanf("%d",&end);
+	perfect(start,end);
+	return 0;
 }
-void perfect(int num)
+void perfect(int start, int end)
 {
-	int result = 0;
-	if(num <= 0)
+	int i,j,sum,result;
+	for(i = start; i <= end; i++)
 	{
-		printf("the number is invaild");
-	}
-	for(int i = 1; i < num; i++)
-	{
-		if(num % i == 0)
+		if(i <= 0)
 		{
-			result += i;
-		}
+		continue;
 	}
-	if(result == num) 
+	
+	sum = 0;
+	for(j = 1; j <= i / 2; j++)
 	{
-		printf("the given number is  perfect number");
+		if(i % j == 0)
+		{
+		sum = sum + j;
 	}
-	else
-	{
-		printf("the given number is not perfect number");
-	}
+}
+if(sum == i)
+{
+	printf("The perfect numbers ::%d\n",i);
+}
+}
 }
