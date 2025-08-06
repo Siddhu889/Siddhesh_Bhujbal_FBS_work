@@ -1,28 +1,31 @@
-//with parameter and without return type.
-//Write a program to check given 3 digit number is pallindrome or not.
+//with parameter and without return type
+//Check the given number is palindrome or not
+//Input n = 121
+//Output =Palindrome
 #include<stdio.h>
-void pallindrome(int num);
+void palindrome(int num);
 void main()
 {
 	int num;
-	printf("Enter a three digit:\n");
+	printf("Enter the number:\n");
 	scanf("%d",&num);
-	pallindrome(num);
+	palindrome(num);
 }
-void pallindrome(int num)
+void palindrome(int num)
 {
-	int original,reversed = 0;
-	original = num;
-	while(num != 0)
+	int reverse,temp,digit;
+	temp = num;
+	while(temp > 0)
 	{
-		int digit = num % 10;
-		reversed = reversed * 10 + digit;
-		num = num / 10;
+		digit = temp % 10;
+		reverse = reverse * 10 + digit;
+        temp = temp/10;		
 	}
-	if(original == reversed){
-		printf("The number is a palindrome.\n");
+	if(reverse == num)
+	{
+		printf("Given number is palindrome");
 	}
 	else{
-		printf("The number is not a palindrome.\n");
+		printf("Given number is not palindrome");
 	}
 }
