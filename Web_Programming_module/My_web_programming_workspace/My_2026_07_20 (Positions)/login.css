@@ -1,0 +1,36 @@
+body{
+    background-color: rgb(143, 221, 237);
+}
+
+.Login{
+    border: 2px solid black;
+    margin: 15%auto;
+    text-align: center;
+    max-width: 400px;
+    background-color: rgb(237, 181, 118);
+    position: relative;
+    padding-bottom: 50px;
+}
+
+.Login form *
+{
+    margin: 20px;
+    padding: 5px;
+}
+
+.form a:first-of-type{
+    position: absolute;
+    left: 10px;
+}
+
+.form a:last-of-type{
+    position: absolute;
+    left: 100px;
+}
+
+
+.button{
+    position: absolute;
+    right: 10px;
+}
+
